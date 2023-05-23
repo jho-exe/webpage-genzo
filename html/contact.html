@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="utf-8">
+<title>GENZO SpA</title>	
+<link rel="stylesheet" type="text/css" href="../css/contact.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
+<link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.css"></script>
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<script src="../js/scrollreveal.js"></script>
+</head>
+
+<body>
+	<header>
+		<div class="contenedor">
+			<div class="menu">
+                <a href="../index.html">
+                      <img  class="logo1" src="../imagenes/logotipo.png" translate="no">
+                </a>
+        
+				<img class="menu-icon" src="imagenes/menu.png" alt="">
+					<nav>
+						<ul class="navegador" translate="no">
+							<li class="primero"><a href="about.html">Sobre nosotros</a></li>
+							<li class="segundo"><a href="service.html">Servicios</a></li>
+                            <li class="sexto"><a href="#">Contactanos</a></li>
+						</ul>
+					</nav>
+			</div>
+		</div>
+</header>
+
+<div class="content">
+
+        <h1 class="logo">Contacta <span>Nos</span></h1>
+
+        <div class="contact-wrapper animated bounceInUp">
+            <div class="contact-form">
+                <h3>Formulario de contacto</h3>
+                <form id="form" action="" class="form">
+                    <p>
+                        <label>Nombre Completo</label>
+                        <input type="text" name="name" required="required">
+                    </p>
+                    <p>
+                        <label>Correo electronico</label>
+                        <input type="email" name="email" required="required" >
+                    </p>
+                    <p>
+                        <label>Numero de telefono</label>
+                        <input type="tel" name="phone" >
+                    </p>
+                    <p>
+                        <label>Asunto</label>
+                        <input type="text" name="affair" required="required">
+                    </p>
+                    <p class="block">
+                       <label>Mensaje</label> 
+                        <textarea name="message" rows="3" minlength="50"></textarea>
+                    </p>
+                    <p class="block">
+                        <button>
+                            Enviar
+                        </button>
+                    </p>
+                    <input type="hidden" name="_next" value="contact.html">
+                    <input type="hidden" name="_captcha" value="false">
+                  	<a href="mailto:contacto@genzo.cl" id="trucazo"></a>
+                </form>
+            </div>
+            <div class="contact-info">
+                <h4>Mas informacion</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> San Fernando</li>
+                  <!--  <li><i class="fas fa-phone"></i> (111) 111 111 111</li> -->
+                    <li><i class="fas fa-envelope-open-text"></i>contacto@genzo.cl</li>
+                </ul>
+                <p>Comunicate con nosotros, nuestros especialistas estan disponibles de Lunes a Viernes.</p>
+                <p>Horario de atencion: 10:00 a 19:00 hrs.</p>
+                <p>Genzo.cl</p>
+            </div>
+        </div>
+    </div>
+        
+
+<br>
+<br>
+<br>
+	
+<section id="que-esperas">
+	<div class="contenedor-todo">
+		<div class="contenedor">
+				<h3>Dale solucion a tus problemas con expertos</h3>
+			</div>
+		<footer>
+        <div class="container">
+            <nav>
+                        <ul class="foot" translate="no">
+                            <li class="primero"><a href="about.html">Sobre nosotros</a></li>
+                            <li class="segundo"><a href="service.html">Servicios</a></li>
+                            <li class="sexto"><a href="#">Contactanos</a></li>
+                        </ul>
+                    </nav>
+            <p>&copy; 2022 Genzo SpA, todos los derechos reservados.</p>
+        </div>
+    </footer>
+	</div>
+			
+	
+</section>
+<section id="whatsapp">
+	<a href="https://wa.me/+56958972863">
+		<img src="imagenes/whatsapp.png" alt="">
+	</a>	
+</section>
+
+<script src="owlcarousel/jquery.min.js"></script>
+<script src="owlcarousel/owl.carousel.min.js"></script>
+<script>
+	$('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:4
+        }
+    }
+})
+
+$('.menu-icon').click(function(event) {
+	$('header nav').slideToggle();
+});
+
+
+</script>
+
+<script>
+
+              // Wrap every letter in a span
+                var textWrapper = document.querySelector('.ml12');
+                textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+                anime.timeline({loop: true})
+                  .add({
+                    targets: '.ml12 .letter',
+                    translateX: [40,0],
+                    translateZ: 0,
+                    opacity: [0,1],
+                    easing: "easeOutExpo",
+                    duration: 1200,
+                    delay: (el, i) => 500 + 30 * i
+                  }).add({
+                    targets: '.ml12 .letter',
+                    translateX: [0,-30],
+                    opacity: [1,0],
+                    easing: "easeInExpo",
+                    duration: 110000,
+                    delay: (el, i) => 100 + 30 * i
+                  });
+
+                  
+            </script>
+
+             <script>
+    const $form = document.querySelector('#form')
+    const $buttonMailto = document.querySelector('#trucazo')
+
+    $form.addEventListener('submit', handleSubmit)
+
+    function handleSubmit(event) {
+      event.preventDefault()
+      const form = new FormData(this)
+      $buttonMailto.setAttribute('href', `mailto:javier.hormazabal@gmail.com?subject=${form.get('affair')}&body=  Nombre: ${form.get('name')}  
+      %0A%0A  Correo: ${form.get('email')} 
+      %0A%0A  Telefono: ${form.get('phone')} 
+      %0A%0A  Mensaje: ${form.get('message')}`)
+      $buttonMailto.click()
+    }
+  </script>
+  <script src="../js/index.js"></script>
+</body>
+
+</html>
